@@ -10,7 +10,7 @@ import XCTest
 
 class StoreDictionaryTests: XCTestCase {
     func testClearStorage() throws {
-        let saveDict: StoreDictionary = SaveDictionaryImpl()
+        let saveDict: SaveDictionary = SaveDictionaryImpl()
         if saveDict.isDictionarySaved {
             saveDict.clearStorgae()
         }
@@ -18,7 +18,7 @@ class StoreDictionaryTests: XCTestCase {
     }
     
     func testSaving() throws {
-        let saveDict: StoreDictionary = SaveDictionaryImpl()
+        let saveDict: SaveDictionary = SaveDictionaryImpl()
         if saveDict.isDictionarySaved {
             saveDict.clearStorgae()
         }
@@ -30,7 +30,7 @@ class StoreDictionaryTests: XCTestCase {
     }
     
     func testSavingAndReading() throws {
-        let saveDict: StoreDictionary = SaveDictionaryImpl()
+        let saveDict: SaveDictionary = SaveDictionaryImpl()
         if saveDict.isDictionarySaved {
             saveDict.clearStorgae()
         }

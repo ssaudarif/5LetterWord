@@ -38,7 +38,7 @@ class SaveDictionaryImpl {
     
 }
 
-extension SaveDictionaryImpl : StoreDictionary  {
+extension SaveDictionaryImpl : SaveDictionary  {
     
     var isDictionarySaved: Bool {
         if let path = documentPath, FileManager.default.fileExists(atPath: path.path) {

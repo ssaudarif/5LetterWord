@@ -21,8 +21,8 @@ class LaunchRouterTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let lr = LaunchRouterImpl()
-//        lr.createNewWordle()
+        let lr:LaunchRouter = LaunchRouterImpl()
+        lr.createNewWordle()
     }
 
     func testPerformanceExample() throws {
