@@ -21,6 +21,7 @@ class DictionaryImpl : Dictionary {
     
     var dict = [String]()
     private weak var _observer: DictionaryObserver?
+    private var networkInit : DictionaryInitiallizer?
     
     private var _isInitialized:Bool = false {
         didSet {
@@ -80,8 +81,8 @@ class DictionaryImpl : Dictionary {
     }
     
     func tryNetworkInit(_ dictionaryFetcher : DictionaryFetcher, comp:@escaping InitCompletionBlock) {
-        let networkInit = DictionaryInitiallizer_Network(dictionaryFetcher)
-        networkInit.startInit(comp)
+        networkInit = DictionaryInitiallizer_Network(dictionaryFetcher)
+        networkInit?.startInit(comp)
     }
     
     func tryResourceInit() -> [String]? {

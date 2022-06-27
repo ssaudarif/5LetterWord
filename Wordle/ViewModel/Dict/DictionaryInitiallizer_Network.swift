@@ -9,11 +9,11 @@ import Foundation
 
 typealias InitCompletionBlock = (Result<[String], Error>) -> Void
 
-protocol DictionaryInitiallizer {
+protocol DictionaryInitiallizer : AnyObject {
     func startInit(_ completion:@escaping(InitCompletionBlock))
 }
 
-class DictionaryInitiallizer_Network {
+class DictionaryInitiallizer_Network : DictionaryInitiallizer {
     
     var compHandler:InitCompletionBlock? = nil
     let df:DictionaryFetcher
@@ -24,6 +24,7 @@ class DictionaryInitiallizer_Network {
     
     func startInit(_ completion:@escaping(InitCompletionBlock)) {
         self.compHandler = completion
+        startFetch()
     }
     
     func startFetch() {
@@ -41,6 +42,7 @@ class DictionaryInitiallizer_Network {
     func handleError(_ n:Error) {
         let errLog:Log = ErrorLog(logMessage: n.localizedDescription)
         sharedLogger.log(errLog)
+        compHandler?(.failure(n))
     }
     
     func handleSuccess(_ s:String) {
