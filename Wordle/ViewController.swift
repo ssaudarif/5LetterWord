@@ -14,12 +14,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        launchRouter.createNewWordle(with: self)
         // Do any additional setup after loading the view.
     }
+}
 
-    
-    
-    
-
+extension ViewController : DictionaryObserver {
+    func isInitiallized() {
+        
+    }
 }
 

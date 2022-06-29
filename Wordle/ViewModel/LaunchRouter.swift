@@ -8,21 +8,16 @@
 import Foundation
 
 protocol LaunchRouter {
-    func createNewWordle()
+    func createNewWordle(with observer:DictionaryObserver?)
 }
 
 class LaunchRouterImpl : LaunchRouter {
     var d : Dictionary? = nil
     
-    func createNewWordle() {
+    func createNewWordle(with observer:DictionaryObserver?) {
         let fetcher : DictionaryFetcher = DictionaryFetcherImpl()
         self.d = DictionaryImpl(fetcher)
-        self.d?.setObserver = self
+        self.d?.setObserver = observer
     }
 }
 
-extension LaunchRouterImpl : DictionaryObserver {
-    func isInitiallized() {
-        
-    }
-}
