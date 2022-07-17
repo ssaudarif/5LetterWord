@@ -7,6 +7,7 @@
 
 import UIKit
 
+//This class will be used to maintain wordle game view
 class WordleVC : UIViewController {
     
 }
