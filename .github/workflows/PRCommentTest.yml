@@ -11,7 +11,7 @@ jobs:
         env:
           URL: ${{ github.event.pull_request.comments_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENTMATRIX: $github.event
         run: |
           echo $URL
-          eventMatrix = github.event
-          echo $eventMatrix
+          echo $EVENTMATRIX
