@@ -1,7 +1,7 @@
 on:
   pull_request:
     branches:    
-      - origin/master
+      - master
 jobs:
   build:
     name: Build default scheme using any available iPhone simulator
