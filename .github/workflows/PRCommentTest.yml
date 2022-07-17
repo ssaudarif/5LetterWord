@@ -11,8 +11,6 @@ jobs:
         env:
           URL: ${{ github.event.pull_request.comments_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          EVENET: ${{ github.event }}
         run: |
           echo $URL
-          echo $EVENET
           echo github.event
