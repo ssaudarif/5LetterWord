@@ -7,6 +7,7 @@
 
 import UIKit
 
+//This class will be responsible to create Keyboard View
 class KeyboardVC : UIViewController {
     
 }
